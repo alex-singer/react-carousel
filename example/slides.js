@@ -1,42 +1,36 @@
 import React from "react"
 
-const referralParams = "utm_course=test-driven-carousel&utm_medium-referral";
 
-const getUsernameUrl = username => {
-  `https://unsplash.com/@${username}?${referralParams}`;
-};
-
-const getAttribution = ({ name, username }) => (
+const getAttribution = ({ name }) => (
   <>
-  Photo by <a href={getUsernameUrl(username)}>{name}</a> on {" "}
-  <a href={`https://unsplash.com/?${referralParams}`}>Unsplash</a>
+  Photo by {name}
   </>
 );
 
 export default [
   {
     description: "Seattle",
-    attibution: getAttribution({
+    attribution: getAttribution({
       name: "Ganapathy Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://example.com/1.png",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
   {
     description: "Seattle",
-    attibution: getAttribution({
-      name: "Ganapathy Kumar",
+    attribution: getAttribution({
+      name: "Pooja Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://example.com/1.png",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
   {
     description: "Seattle",
-    attibution: getAttribution({
-      name: "Ganapathy Kumar",
+    attribution: getAttribution({
+      name: "Harold Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://example.com/1.png",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
 ];
 
