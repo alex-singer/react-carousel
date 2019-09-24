@@ -1,11 +1,6 @@
-import React from "react"
+import React from "react";
 
-
-const getAttribution = ({ name }) => (
-  <>
-  Photo by {name}
-  </>
-);
+const getAttribution = ({ name }) => <>Photo by {name}</>;
 
 export default [
   {
@@ -14,7 +9,8 @@ export default [
       name: "Ganapathy Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
   {
     description: "Seattle",
@@ -22,7 +18,8 @@ export default [
       name: "Pooja Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
   {
     description: "Seattle",
@@ -30,7 +27,7 @@ export default [
       name: "Harold Kumar",
       username: "gkumar2175",
     }),
-    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seattle_Kerry_Park_Skyline.jpg/280px-Seattle_Kerry_Park_Skyline.jpg",
   },
 ];
-
