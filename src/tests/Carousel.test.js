@@ -27,12 +27,7 @@ describe("Carousel", () => {
         let mounted;
 
         beforeEach(() => {
-            jest.useFakeTimers();
-            const autoAdvanceDelay = 10e3;
-            mounted = mount(
-                <Carousel slides={slides} autoAdvanceDelay={autoAdvanceDelay}/>
-            );
-            //mounted = mount(<Carousel slides ={slides}/>);
+            mounted = mount(<Carousel slides ={slides}/>);
         });
 
         it("passes 'slides' down to the core component", () => {
