@@ -11,7 +11,9 @@
     "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier-eslint --write **/*.js",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js --open"
+    "dev": "webpack-dev-server --config webpack.config.js --open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o docs"
   },
   "husky": {
     "hooks": {
@@ -26,6 +28,11 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-knobs": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "acorn": "^6.0.2",
     "acorn-jsx": "5.0.0",
     "babel-eslint": "^10.0.3",
