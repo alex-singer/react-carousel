@@ -13,7 +13,11 @@ export default (Component, propName, upperBoundPropName) =>
         PropTypes.number,
         PropTypes.array,
       ]).isRequired,
-        autoAdvanceDelay: PropTypes.number.isRequired,
+      autoAdvanceDelay: PropTypes.number.isRequired,
+    };
+
+    static defaultProps = {
+      autoAdvanceDelay: 10e3,
     };
 
     componentDidMount() {
@@ -49,6 +53,7 @@ export default (Component, propName, upperBoundPropName) =>
     }
 
     render() {
-      return <Component {...this.props}/>;
+      const { autoAdvanceDelay: _autoAdvanceDelay, ...rest } = this.props;
+      return <Component {...rest}/>;
     }
   };
