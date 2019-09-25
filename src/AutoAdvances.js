@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default (Component, propName, upperBoundPropName) => 
+export default (Component, propName, upperBoundPropName) =>
   class ComponentWithAutoAdvance extends React.PureComponent {
     static displayName = `AutoAdvances(${Component.displayName ||
-      Component.name})`
+      Component.name})`;
 
     static propTypes = {
       [propName]: PropTypes.number.isRequired,
@@ -25,10 +25,10 @@ export default (Component, propName, upperBoundPropName) =>
     }
 
     componentDidUpdate(prevProps) {
-      if(
+      if (
         prevProps[propName] !== this.props[propName] ||
         prevProps[upperBoundPropName] !== this.props[upperBoundPropName]
-      ){
+      ) {
         this.startTimer();
       }
     }
@@ -39,7 +39,7 @@ export default (Component, propName, upperBoundPropName) =>
 
     startTimer() {
       clearTimeout(this._timer);
-      if(!this.props.autoAdvanceDelay) return;
+      if (!this.props.autoAdvanceDelay) return;
       let upperBound;
       if (typeof this.props[upperBoundPropName] === "number") {
         upperBound = this.props[upperBoundPropName];
@@ -54,6 +54,6 @@ export default (Component, propName, upperBoundPropName) =>
 
     render() {
       const { autoAdvanceDelay: _autoAdvanceDelay, ...rest } = this.props;
-      return <Component {...rest}/>;
+      return <Component {...rest} />;
     }
   };

@@ -7,8 +7,7 @@ export default (Component, indexPropName) => {
   const defaultIndexPropName = `default${capitalize(indexPropName)}`;
 
   return class ComponentWithIndex extends React.PureComponent {
-    static displayName = 
-      `HasIndex(${Component.displayName || Component.name})`;
+    static displayName = `HasIndex(${Component.displayName || Component.name})`;
 
     static propTypes = {
       [indexPropName]: PropTypes.number,
@@ -21,10 +20,7 @@ export default (Component, indexPropName) => {
     };
 
     static getDerivedStateFromProps(props, state) {
-      if(
-        props[indexPropName] != null &&
-        props[indexPropName] != state.index
-      ){
+      if (props[indexPropName] != null && props[indexPropName] != state.index) {
         return { index: props[indexPropName] };
       }
       return null;
@@ -44,7 +40,7 @@ export default (Component, indexPropName) => {
         const newIndex = upperBound
           ? (index + upperBound - 1) % upperBound
           : index - 1;
-        if(onIndexChange) {
+        if (onIndexChange) {
           onIndexChange({ target: { value: newIndex } });
         }
         return {
@@ -56,10 +52,8 @@ export default (Component, indexPropName) => {
     handleIncrement = upperBound => {
       const { onIndexChange } = this.props;
       this.setState(({ index }) => {
-        const newIndex = upperBound
-          ? (index + 1) % upperBound
-          : index + 1;
-        if(onIndexChange) {
+        const newIndex = upperBound ? (index + 1) % upperBound : index + 1;
+        if (onIndexChange) {
           onIndexChange({ target: { value: newIndex } });
         }
         return {
@@ -69,17 +63,13 @@ export default (Component, indexPropName) => {
     };
 
     render() {
-      const {
-        [defaultIndexPropName]: _defaultIndexProp,
-        ...rest
-      } = this.props;
+      const { [defaultIndexPropName]: _defaultIndexProp, ...rest } = this.props;
       const indexProps = {
-        [indexPropName]:this.state.index,
+        [indexPropName]: this.state.index,
         [`${indexPropName}Decrement`]: this.handleDecrement,
         [`${indexPropName}Increment`]: this.handleIncrement,
       };
-      return <Component {...rest}{...indexProps} />;
+      return <Component {...rest} {...indexProps} />;
     }
   };
 };
-
