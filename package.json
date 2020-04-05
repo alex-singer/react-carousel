@@ -33,7 +33,7 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
-    "acorn": "^6.0.2",
+    "acorn": "^6.4.1",
     "acorn-jsx": "5.0.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
